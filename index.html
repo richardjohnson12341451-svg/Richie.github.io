@@ -6,20 +6,26 @@
   <title>Richie | Roblox Developer Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+      color: #f0f0f0;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
     header {
-      background-color: #1f1f1f;
-      padding: 2rem;
+      background: linear-gradient(to right, #3a0ca3, #7209b7);
+      padding: 3rem 2rem;
       text-align: center;
+      color: #ffffff;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
     section {
       padding: 2rem;
@@ -30,37 +36,50 @@
       color: #f9c74f;
       border-bottom: 2px solid #f9c74f;
       padding-bottom: 0.5rem;
+      margin-top: 3rem;
     }
     .project {
       margin-bottom: 3rem;
+      background-color: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
     .project h3 {
       margin-top: 0;
+      color: #90e0ef;
     }
     .project img, .project video {
       max-width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-top: 1rem;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     }
     .skills ul {
       list-style: none;
       padding: 0;
+      columns: 2;
     }
     .skills li {
       margin-bottom: 0.5rem;
     }
     footer {
-      background-color: #1f1f1f;
+      background-color: #111;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       font-size: 0.9rem;
+      color: #888;
     }
     a {
-      color: #00b4d8;
+      color: #4cc9f0;
       text-decoration: none;
+      font-weight: bold;
     }
     a:hover {
       text-decoration: underline;
+    }
+    ul li::before {
+      content: "🎮 ";
     }
   </style>
 </head>
@@ -83,12 +102,13 @@
     <div class="project">
       <h3>Custom Character System</h3>
       <p>Command-based system that modifies the player's size, speed, and appearance dynamically. In this example, it transformed the character into "Katakuri" from One Piece with larger proportions.</p>
-      <img src="/mnt/data/b3f3ef80-bee9-41c6-8231-c9c78fa9a5bf.png" alt="Katakuri Character System Screenshot" />
+      <img src="katakuri.png" alt="Katakuri Character System Screenshot" />
     </div>
 
     <div class="project">
       <h3>Combat System</h3>
-      <p>Fully-featured stun-based combat with:
+      <p>
+        Fully-featured stun-based combat with:
         <ul>
           <li>Weapon equip/unequip</li>
           <li>5 M1 combo system</li>
@@ -97,14 +117,15 @@
         </ul>
       </p>
       <video controls>
-        <source src="/mnt/data/Rouge Piece [CC]  - Roblox Studio 2025-08-07 00-09-04.mp4" type="video/mp4">
+        <source src="combat.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
 
     <div class="project">
       <h3>Aura Farming Simulator</h3>
-      <p>Simulator game framework including:
+      <p>
+        Simulator game framework including:
         <ul>
           <li>Aura gaining and rebirth systems</li>
           <li>Shop functionality</li>
@@ -113,7 +134,7 @@
         <strong>FOR SALE</strong> — DM for pricing.
       </p>
       <video controls>
-        <source src="/mnt/data/Roblox Studio 2025-08-07 00-16-36.mp4" type="video/mp4">
+        <source src="aura.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -142,4 +163,3 @@
   </footer>
 </body>
 </html>
-
