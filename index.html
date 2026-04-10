@@ -3,323 +3,290 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of a Roblox scripter & gameplay systems developer.">
-  <title>Roblox Scripter & Developer – Portfolio</title>
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="Roblox Scripter & Gameplay Systems Developer Portfolio">
+  <title>Roblox Developer Portfolio</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg: #0a0b14;
-      --bg-2: #0d0f1d;
-      --text: #e6e9ff;
-      --muted: #a8b3d9;
-      --primary: #7bd8ff; /* light blue */
-      --primary-strong: #19b6ff;
-      --accent: #d39bff;  /* neon purple */
-      --accent-strong: #b06bff;
-      --shadow-neon-blue: 0 0 24px rgba(123,216,255,0.35), 0 0 48px rgba(25,182,255,0.2);
-      --shadow-neon-purple: 0 0 24px rgba(211,155,255,0.35), 0 0 48px rgba(176,107,255,0.2);
-      --radius-xl: 22px;
-      --radius-lg: 16px;
-      --radius-md: 12px;
-      --ring: 0 0 0 1.5px rgba(255,255,255,0.08) inset;
+    :root{
+      --bg:#050507;
+      --bg2:#0a0a0f;
+      --card:rgba(255,255,255,0.04);
+      --stroke:rgba(255,255,255,0.08);
+      --text:#eaeaea;
+      --muted:#9aa0aa;
+      --accent:#ffffff;
+      --glow:0 0 25px rgba(255,255,255,0.08);
+      --radius:18px;
     }
 
-    html, body { height:100%; }
-    body {
-      margin:0; color:var(--text); background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(25,182,255,0.08), transparent 60%),
-        radial-gradient(1200px 600px at 110% 10%, rgba(176,107,255,0.10), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg-2) 65%);
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      line-height:1.55;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Plus Jakarta Sans",sans-serif;
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(255,255,255,0.05), transparent 60%),
+        radial-gradient(800px 400px at 90% 0%, rgba(255,255,255,0.03), transparent 55%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      color:var(--text);
     }
 
-    /* Global layout */
-    .wrap { max-width:1100px; margin-inline:auto; padding: clamp(16px, 2vw, 28px); }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .chip { display:inline-flex; align-items:center; gap:.5rem; padding:.45rem .75rem; border-radius:999px; background: rgba(255,255,255,0.04); box-shadow: var(--ring); }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.7}
 
-    /* Top nav */
-    header { position:sticky; top:0; z-index:40; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(10,11,20,0.8), rgba(10,11,20,0.35)); border-bottom:1px solid rgba(255,255,255,0.06); }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-    .brand { display:flex; align-items:center; gap:.8rem; font-weight:800; letter-spacing:.2px; }
-    .brand .logo { width:36px; height:36px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--accent)); box-shadow: var(--shadow-neon-blue), var(--shadow-neon-purple); }
-    .navlinks { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; }
-    .navlinks a { padding:.6rem .9rem; border-radius:999px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); }
-    .cta { background: linear-gradient(135deg, rgba(25,182,255,0.15), rgba(176,107,255,0.15)); border: 1px solid rgba(123,216,255,0.35); box-shadow: var(--shadow-neon-blue); }
+    .wrap{max-width:1100px;margin:auto;padding:20px}
 
-    /* Hero */
-    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap: clamp(18px, 3vw, 36px); align-items:center; padding: clamp(24px, 5vw, 72px) 0; }
-    .hero h1 { font-size: clamp(2rem, 4vw, 3.4rem); line-height:1.1; margin:0 0 .7rem; letter-spacing:.3px; }
-    .hero p { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.1rem); margin:0 0 1.25rem; }
-    .badges { display:flex; gap:.6rem; flex-wrap:wrap; margin:.75rem 0 1.25rem; }
-
-    .hero-card { border-radius: var(--radius-xl); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.08); padding: clamp(16px, 2vw, 22px); box-shadow: var(--ring), var(--shadow-neon-purple); }
-    .hero-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; margin-top:10px; }
-    .hero-tile { border-radius: 18px; padding:16px; background: rgba(13,15,29,0.8); border:1px solid rgba(255,255,255,0.08); box-shadow: var(--ring); }
-    .metric { font-weight:700; font-size:1.25rem; }
-    .subtle { color: var(--muted); font-size:.9rem; }
-
-    /* Sections */
-    section { padding: clamp(26px, 4vw, 56px) 0; }
-    .section-title { display:flex; align-items:center; justify-content:space-between; margin-bottom: 18px; }
-    .section-title h2 { margin:0; font-size: clamp(1.3rem, 2.2vw, 2rem); }
-    .section-title p { margin:0; color:var(--muted); }
-
-    /* Cards */
-    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: clamp(12px, 1.2vw, 18px); }
-    .card { grid-column: span 12; border-radius: var(--radius-lg); background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.08); padding: 16px; transition: transform .25s ease, box-shadow .25s ease; box-shadow: var(--ring); }
-    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-neon-blue), var(--shadow-neon-purple); }
-    .card h3 { margin: 2px 0 6px; font-size: 1.05rem; letter-spacing:.2px; }
-    .card p { margin: 0; color:var(--muted); font-size: .98rem; }
-
-    .card .tags { display:flex; gap:6px; flex-wrap:wrap; margin-top: 10px; }
-    .tag { font-size:.78rem; padding:.35rem .6rem; border-radius: 999px; border:1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); }
-
-    /* Project image placeholder */
-    .thumb { aspect-ratio: 16/9; border-radius: 14px; background: linear-gradient(135deg, rgba(25,182,255,0.18), rgba(176,107,255,0.18)); border:1px dashed rgba(255,255,255,0.18); display:grid; place-items:center; margin-bottom:10px; }
-    .thumb span { color:#dfe7ff; opacity:.9; font-weight:600; letter-spacing:.3px; text-transform:uppercase; font-size:.78rem; }
-
-    /* Responsive YouTube embeds */
-    .video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 14px; background: #0d0f1d; border:1px solid rgba(255,255,255,0.08); box-shadow: var(--ring); }
-    .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
-    /* Responsive columns */
-    @media (min-width: 640px) {
-      .card.span-6 { grid-column: span 6; }
-    }
-    @media (min-width: 960px) {
-      .card.span-4 { grid-column: span 4; }
-      .card.span-6 { grid-column: span 6; }
+    /* NAV */
+    header{
+      position:sticky;top:0;
+      backdrop-filter:blur(12px);
+      background:rgba(5,5,7,0.7);
+      border-bottom:1px solid var(--stroke);
+      z-index:10;
     }
 
-    /* Skills */
-    .skills { display:flex; flex-wrap:wrap; gap:10px; }
-    .skills .skill { padding:.6rem .8rem; border-radius:999px; background: rgba(123,216,255,0.08); border:1px solid rgba(123,216,255,0.22); box-shadow: var(--shadow-neon-blue); font-weight:600; font-size:.95rem; }
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;
+    }
 
-    /* Footer / contact */
-    footer { border-top:1px solid rgba(255,255,255,0.08); padding: 26px 0 40px; color: var(--muted); }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:800;
+    }
 
-    /* Buttons */
-    .btn-row { display:flex; flex-wrap:wrap; gap:10px; }
-    .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1rem; border-radius: 999px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); cursor:pointer; font-weight:700; letter-spacing:.2px; }
-    .btn.primary { background: linear-gradient(135deg, rgba(25,182,255,0.18), rgba(176,107,255,0.18)); border:1px solid rgba(123,216,255,0.45); box-shadow: var(--shadow-neon-blue); }
-    .btn.purple { background: linear-gradient(135deg, rgba(176,107,255,0.18), rgba(25,182,255,0.18)); border:1px solid rgba(211,155,255,0.45); box-shadow: var(--shadow-neon-purple); }
+    .logo{
+      width:32px;height:32px;border-radius:10px;
+      background:#fff;
+      box-shadow:var(--glow);
+    }
 
-    /* Accessibility / motion */
-    :focus-visible { outline:2px solid var(--primary); outline-offset:3px; border-radius: 10px; }
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; animation: none !important; }
+    .links a{
+      margin-left:12px;
+      padding:8px 12px;
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      font-size:14px;
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:30px;
+      padding:70px 0;
+    }
+
+    h1{
+      font-size:42px;
+      margin:0;
+      line-height:1.1;
+    }
+
+    .muted{color:var(--muted)}
+
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      font-size:12px;
+      margin-bottom:15px;
+    }
+
+    .panel{
+      border:1px solid var(--stroke);
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow:var(--glow);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:16px;
+    }
+
+    .card{
+      grid-column:span 12;
+      border:1px solid var(--stroke);
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      transition:.2s;
+    }
+
+    .card:hover{transform:translateY(-3px)}
+
+    .video{
+      width:100%;
+      aspect-ratio:16/9;
+    }
+
+    iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    .content{padding:14px}
+
+    .title{font-weight:700;margin-bottom:5px}
+
+    .skills span{
+      display:inline-block;
+      padding:8px 10px;
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      margin:5px 5px 0 0;
+      font-size:13px;
+    }
+
+    footer{
+      padding:30px 0;
+      text-align:center;
+      color:var(--muted);
+      border-top:1px solid var(--stroke);
+      margin-top:40px;
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand" aria-label="Brand">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Roblox Scripter</span>
-      </div>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="cta">Contact</a>
-      </nav>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>Roblox Developer</div>
     </div>
-  </header>
-
-  <main class="wrap">
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div>
-        <span class="chip" aria-label="Role Badge">🛠️ Roblox Scripting & Systems</span>
-        <h1>Hi, I'm <span style="background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;">Your Roblox Developer</span></h1>
-        <p>I usally script combat systems and move sets for games so im good at using tweenservice and raycasting.</p>
-        <div class="badges">
-          <span class="chip"> Lua • OOP</span>
-          <span class="chip"> Roblox Studio • Git</span>
-          <span class="chip"> Testing • Debugging</span>
-        </div>
-        <div class="btn-row">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn purple" href="#contact">Hire Me</a>
-          <a class="btn" href="#resume" id="resume-link">Download Résumé</a>
-        </div>
-      </div>
-
-      <aside class="hero-card" aria-label="Quick Stats">
-        <div class="hero-grid">
-          <div class="hero-tile">
-            <div class="metric">3+ yrs</div>
-            <div class="subtle">Experience</div>
-          </div>
-          <div class="hero-tile">
-            <div class="metric">Roblox Lua</div>
-            <div class="subtle">Primary Stack</div>
-          </div>
-          <div class="hero-tile">
-            <div class="metric">Gameplay</div>
-            <div class="subtle">Systems • UI • Data • TweenService • raycast </div>
-          </div>
-          <div class="hero-tile">
-            <div class="metric">Freelance</div>
-            <div class="subtle">Available Now</div>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <div class="section-title">
-        <h2>Featured Projects</h2>
-        <p>Gameplay systems, tools, and polished UI made for Roblox.</p>
-      </div>
-      <div class="grid">
-        <!-- Project Card 1 -->
-        <article class="card span-6" aria-labelledby="p1-title">
-          <div class="video">
-           <iframe src="https://www.youtube.com/embed/p0_kc9pjPrg" title="Conquerors haki" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen> </iframe>
-          </div>
-          <h3 id="p1-title">Conquerors haki</h3>
-          <p>Rouge Piece Conquerors haki system.</p>
-        </article>
-
-        <!-- Project Card 2 -->
-        <article class="card span-6" aria-labelledby="p2-title">
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/zLMZwTyezAE" title="Flame Ultimate" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <h3 id="p2-title">Flame Ultimate</h3>
-          <p>Cinematic ultimate ability featuring charge-up, area damage, camera shake, and layered VFX. Tunable parameters for balance and feel.</p>
-        </article>
-
-        <!-- Project Card 3 -->
-        <article class="card span-4" aria-labelledby="p3-title">
-          <div class="video">
-           <iframe src="https://www.youtube.com/embed/3hwzs0qEdcE" title="Rogue Piece Combat" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <h3 id="p3-title">Rogue Piece</h3>
-          <p>Systems development and polish for an anime-inspired experience. Focus on combat feel, progression hooks, and UI clarity.</p>
-        </article>
-
-        <!-- Project Card 4 -->
-        <article class="card span-4" aria-labelledby="p4-title">
-          <div class="video">
-           <iframe src="https://www.youtube.com/embed/MFLwdsAyNh0" title="Lightning Skill" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <h3 id="p4-title">Lightning Skill</h3>
-          <p>Lighting Skill Made for one piece game.</p>
-        </article>
-
-        <!-- Project Card 5 -->
-        <article class="card span-4" aria-labelledby="p5-title">
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/L3G4CI6lFec" title="Attack on Titan ODM Gear" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <h3 id="p5-title">Attack on Titan – ODM Gear Prototype</h3>
-          <p>High-mobility traversal system inspired by AoT. Includes grappling, momentum-based movement, air control, and animation syncing.</p>
-        </article>
-
-        <!-- Project Card 6 -->
-        <article class="card span-4" aria-labelledby="p6-title">
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/jD91eIBsnpg" title="Chainsaw Man Game Concept" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <h3 id="p6-title">Chainsaw Man – Game Concept</h3>
-          <p>Prototype combat and tone exploration for a Chainsaw Man–inspired experience. Focused on aggressive pacing, visceral feedback, and stylized presentation.</p>
-        </article>
-
-         <!-- Project Card 7 -->
-        <article class="card span-4" aria-labelledby="p6-title">
-          <div class="video">
-            <iframe src="https://www.youtube.com/embed/7y6CqjuVEA4" title="Opv Combat System" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <h3 id="p6-title">Chainsaw Man – Game Concept</h3>
-          <p>One piece game I was helping work on combat system.</p>
-        </article>
-        
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <div class="section-title">
-        <h2>Skills & Tools</h2>
-        <p>Battle-tested for live Roblox experiences.</p>
-      </div>
-      <div class="skills">
-        <span class="skill">Luau / Lua</span>
-        <span class="skill">Roblox Studio</span>
-        <span class="skill">RemoteEvents / Functions</span>
-        <span class="skill">DataStore v2 • ProfileService</span>
-        <span class="skill">UI Design • TweenService</span>
-        <span class="skill">OOP • State Machines</span>
-        <span class="skill">Raycasting</span>
-        <span class="skill">Optimization & Debugging</span>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="section-title">
-        <h2>About Me</h2>
-        <p>Clean code, great UX, and dependable delivery.</p>
-      </div>
-      <div class="grid">
-        <div class="card span-6">
-          <h3>How I Work</h3>
-          <p>I collaborate with designers and producers, break features into milestones, and keep communication clear with short updates and playable builds. I design server-first systems to prevent exploits and ensure scalability.</p>
-        </div>
-        <div class="card span-6">
-          <h3>What I Care About</h3>
-          <p>Moment-to-moment feel, fast iteration, and player clarity. I sweat the details—activation windows, cooldown messaging, error handling, and graceful failure states.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="section-title">
-        <h2>Contact & Availability</h2>
-        <p>Freelance / Contract • Remote friendly</p>
-      </div>
-      <div class="grid">
-        <div class="card span-6">
-          <h3>Get in touch</h3>
-          <p>Email: <a href="mailto:richardjohnson12341451@gmail.com">you@example.com</a><br>
-             Discord: <a href="#">bigrichered</a><br>
-             Roblox: <a href="#">@richtea2010</a>
-          </p>
-          <div class="btn-row" style="margin-top:10px;">
-            <a class="btn primary" href="mailto:you@example.com?subject=Roblox%20Dev%20Inquiry">Email Me</a>
-            <a class="btn purple" href="#">View Roblox Profile</a>
-          </div>
-        </div>
-        <div class="card span-6">
-          <h3>Services</h3>
-          <p>Gameplay systems • Abilities • Combat • UI/UX • Data & economy • Pets & progression • Shops & monetization • Optimization • Bugfixes</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p>© <span id="y"></span> Your Name — Roblox Scripter & Developer. Built with a neon light‑blue & purple theme.</p>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
-  </footer>
+  </div>
+</header>
 
-  <script>
-    // Update year and provide a quick way to replace resume link.
-    document.getElementById('y').textContent = new Date().getFullYear();
-    // Optional: replace with your real resume URL (e.g., Google Drive or PDF)
-    document.getElementById('resume-link').setAttribute('href', '#');
-  </script>
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="badge">Roblox Scripter • Gameplay Systems</div>
+      <h1>Clean, responsive & combat-focused Roblox systems.</h1>
+      <p class="muted">
+        I specialize in abilities, combat mechanics, movement systems, TweenService effects, and optimized server-client architecture.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h3>Quick Info</h3>
+      <p class="muted">3+ years experience</p>
+      <p class="muted">Lua / Luau • Roblox Studio</p>
+      <p class="muted">Combat systems • VFX • UI</p>
+      <p class="muted">Freelance available</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Featured Work</h2>
+
+    <div class="grid">
+
+      <!-- Explosion Skill -->
+      <div class="card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/ZvpEB_JIk9Q" allowfullscreen></iframe>
+        </div>
+        <div class="content">
+          <div class="title">Explosion Skill</div>
+          <div class="muted">High impact AOE explosion system with knockback + VFX timing.</div>
+        </div>
+      </div>
+
+      <!-- Tremor Skill -->
+      <div class="card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/MqLDfDZhMaQ" allowfullscreen></iframe>
+        </div>
+        <div class="content">
+          <div class="title">Tremor Skill</div>
+          <div class="muted">Ground-shockwave system with camera shake, radius scaling, and impact sync.</div>
+        </div>
+      </div>
+
+      <!-- Lightning Skill -->
+      <div class="card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/MFLwdsAyNh0" allowfullscreen></iframe>
+        </div>
+        <div class="content">
+          <div class="title">Lightning Skill</div>
+          <div class="muted">Fast strike ability with targeting, beam effects, and chained VFX logic.</div>
+        </div>
+      </div>
+
+      <!-- Flame Skill -->
+      <div class="card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/zLMZwTyezAE" allowfullscreen></iframe>
+        </div>
+        <div class="content">
+          <div class="title">Flame Skill</div>
+          <div class="muted">Cinematic charge-up ultimate with area burn, particles, and camera shake.</div>
+        </div>
+      </div>
+
+      <!-- Mobility Gear -->
+      <div class="card">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/L3G4CI6lFec" allowfullscreen></iframe>
+        </div>
+        <div class="content">
+          <div class="title">Omni-Directional Mobility Gear</div>
+          <div class="muted">Traversal system with grappling, momentum physics, and air control.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Luau / Lua</span>
+      <span>Combat Systems</span>
+      <span>TweenService</span>
+      <span>Raycasting</span>
+      <span>OOP Architecture</span>
+      <span>RemoteEvents</span>
+      <span>Optimization</span>
+      <span>UI Systems</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="panel">
+      <p>Email: yourmail@example.com</p>
+      <p>Discord: yourname</p>
+      <p>Roblox: @username</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Roblox Developer Portfolio — Black Minimal Edition
+</footer>
+
 </body>
 </html>
-
